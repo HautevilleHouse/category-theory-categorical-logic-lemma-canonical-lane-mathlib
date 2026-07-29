@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CategoryTheoryCategoricalLogicLemmaCanonicalLaneLean.AdjointFunctorBridge
+import HautevilleHouse.CategoryTheoryCategoricalLogicLemmaCanonicalLaneLean.YonedaLemmaBridge
+import HautevilleHouse.CategoryTheoryCategoricalLogicLemmaCanonicalLaneLean.LimitColimitBridge
+
+namespace HautevilleHouse
+namespace CategoryTheoryCategoricalLogicLemmaCanonicalLaneLean
+
+open HautevilleHouse.CanonicalLaneMathlibCore
+
+def ConstrainedCategoryTheoryClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_category_theory_endgame (A : AdmissibleClass) : ConstrainedCategoryTheoryClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end HautevilleHouse
+end CategoryTheoryCategoricalLogicLemmaCanonicalLaneLean
